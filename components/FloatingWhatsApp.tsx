@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 export default function FloatingWhatsApp() {
   const [isHovered, setIsHovered] = useState(false);
-  const whatsappUrl = "https://wa.me/917987829764?text=Hi%20Nirgranth%2C%20I%20saw%20your%20portfolio%20and%20I%27m%20interested%20in...";
+  const whatsappUrl = "https://wa.me/918109224176?text=Hi%20Pratham%2C%20I%20saw%20your%20portfolio%20and%20I%27m%20interested%20in...";
 
   return (
     <div className="fixed bottom-6 right-6 z-[100]">

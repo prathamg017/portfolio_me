@@ -4,7 +4,10 @@
   --color-brand-bg: #F3F1ED;
   --color-brand-text: #121212;
   --color-brand-border: #121212;
-  --color-brand-border-light: rgba(18, 18, 18, 0.2);
+  --color-brand-border-light: rgba(18, 18, 18, 0.1);
+  --color-brand-accent: #00e5c3;
+  --color-brand-surface: #ffffff;
+  --color-brand-muted: #666666;
 
   --color-inverse-bg: #121212;
   --color-inverse-text: #F3F1ED;
@@ -13,6 +16,9 @@
   --font-anton: var(--font-anton);
   --font-script: var(--font-script);
   --font-body: var(--font-body);
+
+  --spacing-section: 6rem;
+  --spacing-section-md: 10rem;
 }
 
 @layer base {
@@ -23,24 +29,41 @@
 
   /* Universal grid structure */
   .editorial-border {
-    @apply border-b border-[var(--color-brand-text)];
+    @apply border-b-[2px] border-[var(--color-brand-text)];
   }
   .editorial-border-x {
-    @apply border-x border-[var(--color-brand-text)];
+    @apply border-x-[2px] border-[var(--color-brand-text)];
   }
 }
 
 .inverse-section {
   @apply bg-[var(--color-inverse-bg)] text-[var(--color-inverse-text)];
 }
-.inverse-section .editorial-border {
-  @apply border-[var(--color-inverse-border)];
+
+/* Brutalist Buttons */
+.btn-primary {
+  @apply bg-[var(--color-brand-accent)] text-[#0a0a0f] font-bold uppercase tracking-widest text-xs px-8 py-5 text-center border-[2px] border-[var(--color-brand-accent)] transition-all duration-300 hover:bg-transparent hover:text-[var(--color-brand-accent)];
 }
-.inverse-section .editorial-border-x {
-  @apply border-[var(--color-inverse-border)];
+
+.btn-secondary {
+  @apply bg-transparent text-[var(--color-brand-accent)] font-bold uppercase tracking-widest text-xs px-8 py-5 text-center border-[2px] border-[var(--color-brand-accent)] transition-all duration-300 hover:bg-[var(--color-brand-accent)] hover:text-[#0a0a0f];
+}
+
+.btn-brutalist {
+  @apply bg-white text-[var(--color-brand-text)] font-bold uppercase tracking-widest text-xs px-8 py-5 text-center border-[2px] border-[var(--color-brand-text)] transition-all duration-300 hover:shadow-[8px_8px_0px_0px_var(--color-brand-text)] hover:-translate-x-1 hover:-translate-y-1;
+}
+
+/* Layout Helpers */
+.section-padding {
+  @apply py-24 md:py-32 px-6 md:px-12;
+}
+
+.brutalist-card {
+  @apply bg-white border-[2px] border-[var(--color-brand-text)] p-8 hover:shadow-[12px_12px_0px_0px_var(--color-brand-text)] transition-all duration-300;
 }
 
 /* The Asterisk */
 .asterisk-btn {
   @apply inline-block text-4xl leading-none font-body font-light cursor-pointer hover:rotate-90 transition-transform duration-500;
 }
+

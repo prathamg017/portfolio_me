@@ -12,69 +12,79 @@ export default function FreeAudit() {
   };
 
   return (
-    <section id="free-audit" className="py-24 md:py-32 px-6 md:px-12 w-full relative bg-white">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section id="free-audit" className="w-full bg-[var(--color-brand-bg)] py-24 md:py-32 px-6 md:px-12 border-b-[2px] border-[var(--color-brand-text)] flex flex-col items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         
         {/* Left: Copy & Form */}
         <div>
-          <span className="font-mono text-xs font-bold px-3 py-1 bg-[var(--color-brand-accent)]/10 text-[var(--color-brand-accent)] uppercase tracking-widest rounded-full mb-6 inline-block">
-            Free Consultation
+          <span className="font-mono text-xs font-bold text-[var(--color-brand-accent)] uppercase tracking-[0.2em] mb-8 block">
+            Lead Magnet #001 — Strategic Audit
           </span>
-          <h2 className="font-display font-[800] text-[clamp(2rem,4vw,3rem)] text-[var(--color-brand-text)] leading-[1.1] mb-4">
-            Is your business ready to scale with AI?
+          <h2 className="font-anton text-5xl md:text-7xl uppercase leading-[0.9] text-[var(--color-brand-text)] mb-8 tracking-tighter">
+            Is your business ready to <span className="text-white bg-[var(--color-brand-text)] px-2">scale</span> with AI?
           </h2>
-          <p className="font-body text-[1.1rem] leading-[1.7] text-[var(--color-brand-muted)] mb-10 max-w-xl">
-            We offer a complimentary strategic audit to identify operational bottlenecks and map out a custom digital infrastructure plan that drives revenue.
+          <p className="font-body text-lg leading-[1.6] opacity-80 mb-12 max-w-xl font-medium">
+            We offer a complimentary strategic audit to identify operational bottlenecks and map out a custom digital infrastructure plan that drives revenue and compounds your value.
           </p>
 
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="bg-[var(--color-brand-surface)] border border-[var(--color-brand-border)] p-6 md:p-8 rounded-xl max-w-md w-full shadow-sm">
-               <h3 className="font-display font-[600] text-lg text-[var(--color-brand-text)] mb-6">Request an audit</h3>
-               <div className="space-y-4">
-                 <input required placeholder="Full Name" type="text" className="w-full bg-white border border-[var(--color-brand-border)] text-[var(--color-brand-text)] p-3.5 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors rounded-lg shadow-sm placeholder:text-[var(--color-brand-muted)]" />
-                 <input required placeholder="Work Email" type="email" className="w-full bg-white border border-[var(--color-brand-border)] text-[var(--color-brand-text)] p-3.5 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors rounded-lg shadow-sm placeholder:text-[var(--color-brand-muted)]" />
-                 <select required defaultValue="" className="w-full bg-white border border-[var(--color-brand-border)] py-3.5 px-4 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors rounded-lg text-[var(--color-brand-text)] shadow-sm appearance-none">
-                    <option value="" disabled>Primary Objective</option>
-                    <option value="leads">Revenue & Growth Operations</option>
-                    <option value="convert">Custom Applications</option>
-                    <option value="ops">Internal AI Automation</option>
-                    <option value="speed">Full System Modernization</option>
-                 </select>
-                 <button type="submit" className="w-full bg-[var(--color-brand-accent)] text-white font-display font-[600] px-6 py-4 rounded-lg shadow-sm hover:bg-[var(--color-brand-accent-hover)] transition-colors flex items-center justify-center gap-2 mt-2">
+            <form onSubmit={handleSubmit} className="brutalist-card max-w-md w-full bg-white relative">
+               <div className="absolute -top-4 -left-4 bg-[var(--color-brand-accent)] text-[#0a0a0f] font-mono text-[10px] font-bold px-3 py-1 border-[2px] border-[var(--color-brand-text)]">
+                 SECURE ENCRYPTED FORM
+               </div>
+               <h3 className="font-anton text-2xl uppercase text-[var(--color-brand-text)] mb-8 pt-4">Request an audit</h3>
+               <div className="space-y-6">
+                 <div className="flex flex-col gap-2">
+                    <label className="font-mono text-[9px] uppercase font-bold opacity-40">Ident_Full_Name</label>
+                    <input required placeholder="Pratham G." type="text" className="w-full bg-white border-b-[2px] border-[var(--color-brand-text)] text-[var(--color-brand-text)] py-3 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors placeholder:opacity-30" />
+                 </div>
+                 <div className="flex flex-col gap-2">
+                    <label className="font-mono text-[9px] uppercase font-bold opacity-40">Ident_Work_Email</label>
+                    <input required placeholder="nirgranthcreations.co@gmail.com" type="email" className="w-full bg-white border-b-[2px] border-[var(--color-brand-text)] text-[var(--color-brand-text)] py-3 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors placeholder:opacity-30" />
+                 </div>
+                 <div className="flex flex-col gap-2">
+                    <label className="font-mono text-[9px] uppercase font-bold opacity-40">Obj_Primary_Metric</label>
+                    <select required defaultValue="" className="w-full bg-white border-b-[2px] border-[var(--color-brand-text)] py-3 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors text-[var(--color-brand-text)] appearance-none cursor-pointer">
+                        <option value="" disabled>Select Objective</option>
+                        <option value="leads">Revenue & Growth Operations</option>
+                        <option value="convert">Custom AI Infrastructure</option>
+                        <option value="ops">Internal Process Automation</option>
+                        <option value="speed">Full System Scalability</option>
+                    </select>
+                 </div>
+                 <button type="submit" className="w-full btn-primary flex justify-center items-center gap-2 mt-4">
                    Schedule Consultation <ArrowRight size={18} />
                  </button>
                </div>
             </form>
           ) : (
-            <div className="max-w-md bg-[var(--color-brand-surface)] border border-[var(--color-brand-border)] p-8 rounded-xl text-center shadow-sm">
-               <CheckCircle2 className="w-12 h-12 text-[var(--color-brand-accent)] mx-auto mb-4" />
-               <h4 className="font-display font-[700] text-2xl text-[var(--color-brand-text)] mb-2">Request Received</h4>
-               <p className="font-body text-[0.95rem] text-[var(--color-brand-muted)]">We will be in touch shortly to schedule your strategic audit session.</p>
+            <div className="max-w-md brutalist-card text-center bg-white">
+               <CheckCircle2 className="w-12 h-12 text-[var(--color-brand-accent)] mx-auto mb-6" />
+               <h4 className="font-anton text-3xl uppercase text-[var(--color-brand-text)] mb-4">Request Logged</h4>
+               <p className="font-body text-base opacity-70 font-medium">Our architecture team will be in touch shortly to schedule your session.</p>
             </div>
           )}
         </div>
 
         {/* Right: Premium Value Proposition Graphic */}
         <div className="relative w-full max-w-lg mx-auto lg:ml-auto">
-           <div className="bg-[var(--color-brand-surface)] rounded-2xl p-8 md:p-10 border border-[var(--color-brand-border)] relative overflow-hidden shadow-md">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-brand-accent)]/10 blur-[50px] rounded-full" />
+           <div className="bg-white border-[2px] border-[var(--color-brand-text)] p-8 md:p-12 relative overflow-hidden shadow-[15px_15px_0px_0px_var(--color-brand-accent)]">
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--color-brand-accent)] opacity-5 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
               
-              <h3 className="font-display font-[700] text-2xl text-[var(--color-brand-text)] mb-6 relative z-10">What's included in the audit:</h3>
+              <h3 className="font-anton text-3xl md:text-4xl uppercase text-[var(--color-brand-text)] mb-10 relative z-10 leading-[1]">Audit Inclusions:</h3>
               
-              <div className="flex flex-col gap-6 relative z-10">
+              <div className="flex flex-col gap-8 relative z-10">
                 {[
                   { title: "Technical Architecture Review", desc: "Analysis of your current stack and infrastructure inefficiencies." },
                   { title: "AI Opportunity Mapping", desc: "Identification of redundant processes primed for automation." },
                   { title: "Conversion Systems Analysis", desc: "UX and performance benchmarking against industry leaders." },
                   { title: "Strategic Roadmap", desc: "A phased action plan for deployment and scaling." },
                 ].map((pt, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="mt-1 bg-white p-1 rounded-full border border-[var(--color-brand-border)] shrink-0 shadow-sm h-min">
-                      <CheckCircle2 className="w-4 h-4 text-[var(--color-brand-accent)]" />
-                    </div>
+                  <div key={i} className="flex gap-6 items-start border-t border-[var(--color-brand-text)] border-opacity-10 pt-6 first:border-0 first:pt-0">
+                    <div className="mt-1 font-anton text-2xl text-[var(--color-brand-accent)] shrink-0">0{i+1}</div>
                     <div>
-                      <h4 className="font-display font-semibold text-[1.05rem] text-[var(--color-brand-text)] mb-1">{pt.title}</h4>
-                      <p className="font-body text-sm text-[var(--color-brand-muted)] leading-[1.6]">{pt.desc}</p>
+                      <h4 className="font-anton text-xl uppercase text-[var(--color-brand-text)] mb-2">{pt.title}</h4>
+                      <p className="font-body text-sm opacity-70 leading-[1.6] font-medium">{pt.desc}</p>
                     </div>
                   </div>
                 ))}

@@ -23,9 +23,25 @@ const inter = Inter({
   display: "swap",
 });
 
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 export const metadata: Metadata = {
-  title: "PRATHAM // Software Engineer",
-  description: "Editorial personal portfolio of Pratham.",
+  title: "Nirgranth Creations — AI · Web · App Studio",
+  description: "We build AI automation systems, Next.js platforms, and Flutter apps that compound business value. Based in India, building globally.",
+  openGraph: {
+    title: "Nirgranth Creations — AI · Web · App Studio",
+    description: "We build AI automation systems, Next.js platforms, and Flutter apps that compound business value. Based in India, building globally.",
+    url: "https://nirgranth.com",
+    siteName: "Nirgranth Creations",
+    images: [{ url: "/og-image.jpg" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nirgranth Creations — AI · Web · App Studio",
+    description: "We build AI automation systems, Next.js platforms, and Flutter apps that compound business value. Based in India, building globally."
+  }
 };
 
 export default function RootLayout({
@@ -36,9 +52,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${anton.variable} ${script.variable} ${inter.variable} antialiased min-h-screen flex flex-col relative`}>
-        {/* Universal Page Border Frame */}
+        {/* PERMANENT BORDER FRAME FOR BRUTALIST AESTHETIC */}
         <div className="fixed inset-0 pointer-events-none z-50 border-[2px] md:border-[4px] border-[var(--color-brand-text)]" />
-        {children}
+        
+        <Navbar />
+        <main className="flex-grow pt-24 md:pt-32 relative z-10 w-full overflow-x-hidden">
+          {children}
+        </main>
+        <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );
