@@ -66,7 +66,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             alt={project.projectName}
             fill
             className="object-cover object-top"
-            quality={100}
+            quality={90}
             priority
          />
       </section>

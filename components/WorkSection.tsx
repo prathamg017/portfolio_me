@@ -59,7 +59,7 @@ export default function WorkSection() {
                         alt={project.projectName}
                         fill
                         className="object-cover object-top group-hover:scale-[1.05] transition-transform duration-[1s] ease-in-out"
-                        quality={100}
+                        quality={90}
                       />
                     )}
                  </div>
