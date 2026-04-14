@@ -43,9 +43,22 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <h1 className="font-anton text-[12vw] md:text-[8vw] leading-[0.85] uppercase mb-10 tracking-tighter">
             {project.projectName}
           </h1>
-          <p className="font-body text-lg md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto opacity-80 mb-16">
+          <p className="font-body text-lg md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto opacity-80 mb-12">
             {project.shortDescription}
           </p>
+
+          {project.live && (
+            <div className="mb-16">
+               <Link 
+                href={project.live} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-primary px-12 py-6 text-xl md:text-2xl font-anton tracking-widest inline-flex items-center gap-4 shadow-[10px_10px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+              >
+                Visit Live Site <span className="text-2xl">↗</span>
+              </Link>
+            </div>
+          )}
 
           {/* Metrics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 border-[2px] border-[var(--color-brand-text)] bg-[var(--color-brand-bg)]">
@@ -102,9 +115,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
              {/* Studio Bubble */}
              <div className="self-end max-w-[80%] text-right">
-                <div className="font-mono text-[10px] uppercase tracking-widest font-bold mb-2 text-[var(--color-brand-accent)]">Nirgranth Creations</div>
+                <div className="font-mono text-[10px] uppercase tracking-widest font-bold mb-2 text-[var(--color-brand-accent)]">Pratham Studio</div>
                 <div className="bg-[var(--color-brand-text)] text-white p-6 md:p-8 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl shadow-[8px_8px_0px_0px_var(--color-brand-accent)]">
-                   <p className="font-body text-base md:text-lg font-medium">{project.storyNirgranth}</p>
+                   <p className="font-body text-base md:text-lg font-medium">{project.storyPratham}</p>
                 </div>
              </div>
           </div>
@@ -142,17 +155,38 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <h2 className="font-anton text-[7vw] md:text-[5vw] leading-[1] mb-12 max-w-4xl uppercase">
             {project.projectCTA}
           </h2>
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <Link href="/#contact" className="btn-primary">
               Initialize System Build
             </Link>
+            
+            {project.live && (
+              <Link 
+                href={project.live} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-brutalist border-[#00e5c3] bg-[#00e5c3] text-[#0a0a0f] hover:bg-white hover:text-[var(--color-brand-text)]"
+              >
+                Visit Live Site
+              </Link>
+            )}
+
+            {project.github && (
+              <Link 
+                href={project.github} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-brutalist flex items-center gap-2"
+              >
+                View on GitHub
+              </Link>
+            )}
+
             <Link href="/#work" className="btn-brutalist">
               View Other Projects
             </Link>
           </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

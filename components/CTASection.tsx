@@ -10,6 +10,15 @@ export default function CTASection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const target = e.target as HTMLFormElement;
+    const name = (target.elements[0] as HTMLInputElement).value;
+    const email = (target.elements[1] as HTMLInputElement).value;
+    const spec = (target.elements[2] as HTMLTextAreaElement).value;
+
+    const message = `*Project Request #002*\n\n*Name:* ${name}\n*Email:* ${email}\n*Build Spec:* ${spec}`;
+    const whatsappUrl = `https://wa.me/918109224176?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, "_blank");
     setSubmitted(true);
   };
 
@@ -69,14 +78,14 @@ export default function CTASection() {
             <CheckCircle2 className="w-16 h-16 text-[var(--color-brand-accent)] mx-auto mb-10" />
             <h3 className="font-anton text-4xl text-[var(--color-brand-text)] mb-4 uppercase">Request Logged</h3>
             <p className="font-body text-lg text-black/60 font-medium">
-              Our strategy team will respond to your inquiry within one business day via encrypted communication.
+              We have redirected you to WhatsApp to finalize your build request. Our team will follow up shortly.
             </p>
           </div>
         )}
 
         {/* Global corporate standard contact styling */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mt-24 pt-12 border-t border-white/10 w-full max-w-4xl font-mono text-[10px] md:text-xs font-bold text-white/40 uppercase tracking-[0.2em]">
-          <Link href="mailto:nirgranthcreations.co@gmail.com" className="hover:text-[var(--color-brand-accent)] transition-colors">Mail: nirgranthcreations.co@gmail.com</Link>
+          <Link href="mailto:gangwalpratham1302@gmail.com" className="hover:text-[var(--color-brand-accent)] transition-colors">Mail: gangwalpratham1302@gmail.com</Link>
           <span className="hidden md:inline">•</span>
           <Link href="https://wa.me/918109224176" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-brand-accent)] transition-colors">Whatsapp: +91 81092 24176</Link>
           <span className="hidden md:inline">•</span>

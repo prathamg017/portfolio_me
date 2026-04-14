@@ -8,6 +8,15 @@ export default function FreeAudit() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const target = e.target as HTMLFormElement;
+    const name = (target.elements[0] as HTMLInputElement).value;
+    const email = (target.elements[1] as HTMLInputElement).value;
+    const objective = (target.elements[2] as HTMLSelectElement).value;
+
+    const message = `*Strategic Audit Request*\n\n*Name:* ${name}\n*Email:* ${email}\n*Objective:* ${objective}`;
+    const whatsappUrl = `https://wa.me/918109224176?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, "_blank");
     setSubmitted(true);
   };
 
@@ -40,7 +49,7 @@ export default function FreeAudit() {
                  </div>
                  <div className="flex flex-col gap-2">
                     <label className="font-mono text-[9px] uppercase font-bold opacity-40">Ident_Work_Email</label>
-                    <input required placeholder="nirgranthcreations.co@gmail.com" type="email" className="w-full bg-white border-b-[2px] border-[var(--color-brand-text)] text-[var(--color-brand-text)] py-3 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors placeholder:opacity-30" />
+                    <input required placeholder="gangwalpratham1302@gmail.com" type="email" className="w-full bg-white border-b-[2px] border-[var(--color-brand-text)] text-[var(--color-brand-text)] py-3 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors placeholder:opacity-30" />
                  </div>
                  <div className="flex flex-col gap-2">
                     <label className="font-mono text-[9px] uppercase font-bold opacity-40">Obj_Primary_Metric</label>
@@ -53,7 +62,7 @@ export default function FreeAudit() {
                     </select>
                  </div>
                  <button type="submit" className="w-full btn-primary flex justify-center items-center gap-2 mt-4">
-                   Schedule Consultation <ArrowRight size={18} />
+                    Schedule Consultation <ArrowRight size={18} />
                  </button>
                </div>
             </form>
@@ -61,7 +70,7 @@ export default function FreeAudit() {
             <div className="max-w-md brutalist-card text-center bg-white">
                <CheckCircle2 className="w-12 h-12 text-[var(--color-brand-accent)] mx-auto mb-6" />
                <h4 className="font-anton text-3xl uppercase text-[var(--color-brand-text)] mb-4">Request Logged</h4>
-               <p className="font-body text-base opacity-70 font-medium">Our architecture team will be in touch shortly to schedule your session.</p>
+               <p className="font-body text-base opacity-70 font-medium">We have redirected you to WhatsApp to schedule your sessions. Our team will follow up shortly.</p>
             </div>
           )}
         </div>

@@ -11,10 +11,10 @@ export default function IntroSection() {
         </div>
         <div className="p-8 md:p-12 flex-1 relative flex flex-col justify-center bg-white">
           <h3 className="font-anton text-4xl md:text-5xl uppercase tracking-wider text-[var(--color-brand-text)] mb-3">
-            We're Nirgranth Creations.
+            We're pratham.dev.
           </h3>
           <div className="font-body text-xs md:text-sm font-bold opacity-60 uppercase tracking-widest mb-2 text-[var(--color-brand-text)]">
-            A small, precise digital studio from India.
+            A small, precise digital studio.
           </div>
           <div className="font-mono text-[9px] font-bold text-[var(--color-brand-accent)] uppercase tracking-widest mb-8 border-[1px] border-[var(--color-brand-accent)] w-fit px-2 py-0.5">
             Founder & CTO / Pratham
@@ -42,7 +42,7 @@ export default function IntroSection() {
          <div className="w-full max-w-sm aspect-[4/5] md:aspect-[3/4] relative group overflow-hidden border-[2px] border-[var(--color-brand-text)] shadow-[15px_15px_0px_0px_var(--color-brand-text)] bg-black/5">
             <Image 
               src="/me.png"
-              alt="Pratham — Tech Lead & CTO of Nirgranth Creations"
+              alt="Pratham — Tech Lead & CTO of pratham.dev"
               fill
               quality={100}
               priority

@@ -21,7 +21,7 @@ export default function Hero() {
           className="font-mono text-[var(--color-brand-accent)] text-xs md:text-sm uppercase tracking-[0.4em] font-bold mb-12 md:mb-16 flex items-center gap-4"
         >
           <span className="w-12 h-[2px] bg-[var(--color-brand-accent)]" />
-          Nirgranth Creations — AI · Web · App Studio
+          pratham.dev — AI · Web · App Studio
         </motion.div>
 
         {/* Headline */}
@@ -59,7 +59,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            Nirgranth Creations is an elite architectural studio engineering AI automation pipelines, high-conversion static platforms, and physics-driven mobile applications.
+            pratham.dev is an elite architectural studio engineering AI automation pipelines, high-conversion static platforms, and physics-driven mobile applications.
           </motion.p>
           
           {/* CTAs */}

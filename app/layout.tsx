@@ -28,18 +28,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Nirgranth Creations — AI · Web · App Studio",
+  title: "pratham.dev — AI · Web · App Studio",
   description: "We build AI automation systems, Next.js platforms, and Flutter apps that compound business value. Based in India, building globally.",
   openGraph: {
-    title: "Nirgranth Creations — AI · Web · App Studio",
+    title: "pratham.dev — AI · Web · App Studio",
     description: "We build AI automation systems, Next.js platforms, and Flutter apps that compound business value. Based in India, building globally.",
-    url: "https://nirgranth.com",
-    siteName: "Nirgranth Creations",
+    url: "https://pratham.com",
+    siteName: "pratham.dev",
     images: [{ url: "/og-image.jpg" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nirgranth Creations — AI · Web · App Studio",
+    title: "pratham.dev — AI · Web · App Studio",
     description: "We build AI automation systems, Next.js platforms, and Flutter apps that compound business value. Based in India, building globally."
   }
 };

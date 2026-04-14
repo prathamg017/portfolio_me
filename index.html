@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratham | Software Engineer — Digital Architect</title>
+    <meta name="description" content="Portfolio of Pratham, a Software Engineer specializing in Flutter architectures and GenAI pipelines.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0a0a0a',
+                        text: '#f0ede8',
+                        accent: {
+                            pink: '#f53d90',
+                            purple: '#8b3cfd',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"DM Serif Display"', 'serif'],
+                        mono: ['"DM Mono"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'accent-gradient': 'linear-gradient(to right, #f53d90, #8b3cfd)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            background-color: #0a0a0a;
+            color: #f0ede8;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Project Switcher Specific */
+        .project-number-btn.active {
+            background: linear-gradient(to right, #f53d90, #8b3cfd);
+            border-color: transparent;
+            color: white;
+        }
+
+        .project-number-btn {
+            transition: all 0.3s ease;
+        }
+
+        /* Grid Pattern for mockups */
+        .grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+
+        /* Skill Tab Active */
+        .skill-tab.active {
+            color: #f53d90;
+            border-bottom: 2px solid #f53d90;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl font-bold italic tracking-tighter">P.</a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-8 font-mono text-sm tracking-widest uppercase">
+                <a href="#skills" class="hover:text-accent-pink transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-accent-pink transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-accent-pink transition-colors">Experience</a>
+                <a href="#achievements" class="hover:text-accent-pink transition-colors">Achievements</a>
+                <a href="#contact" class="hover:text-accent-pink transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-text p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg flex flex-col items-center justify-center space-y-8 font-mono text-2xl tracking-widest uppercase transform translate-x-full transition-transform duration-500 md:hidden">
+        <button id="close-menu-btn" class="absolute top-6 right-6 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#experience" class="mobile-link">Experience</a>
+        <a href="#achievements" class="mobile-link">Achievements</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen pt-32 pb-20 relative px-6 overflow-hidden">
+        <!-- Geometric Decorations -->
+        <div class="absolute top-20 right-[-50px] md:right-10 opacity-20 pointer-events-none animate-float">
+            <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="50" y="50" width="200" height="200" stroke="#f53d90" stroke-width="2" />
+                <circle cx="250" cy="250" r="100" stroke="#8b3cfd" stroke-width="2" />
+                <path d="M150 350 L250 150 L350 350 Z" stroke="#f53d90" stroke-width="2" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col justify-center min-h-[70vh]">
+            <div class="reveal">
+                <span class="font-mono text-accent-pink tracking-widest uppercase text-sm mb-4 block">Based in India</span>
+                <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9]">
+                    hello<span class="italic text-accent-purple tracking-tighter">.</span>world
+                </h1>
+                <p class="max-w-2xl text-lg md:text-xl text-text/70 mb-12 font-light leading-relaxed">
+                    I am <span class="font-medium text-text">Pratham</span>, a digital architect specializing in bridging complex technologies. From high-performance Flutter architectures to highly dynamic GenAI pipelines, I engineer scalable mobile and web ecosystems the market demands.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="px-8 py-4 bg-accent-gradient rounded-full font-mono text-sm tracking-widest uppercase hover:scale-105 transition-transform">See Projects</a>
+                    <a href="#" class="px-8 py-4 border border-white/20 rounded-full font-mono text-sm tracking-widest uppercase hover:bg-white/5 transition-colors">Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 space-y-6">
+                <div class="reveal">
+                    <span class="font-mono text-accent-purple tracking-widest uppercase text-xs mb-2 block">// expertise</span>
+                    <h2 class="font-serif text-4xl md:text-6xl">Tech Stack</h2>
+                </div>
+                <!-- SVG Decorator -->
+                <div class="opacity-30 reveal hidden md:block">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="15" stroke="#f53d90" stroke-width="1.5" />
+                        <circle cx="35" cy="35" r="20" fill="#8b3cfd" fill-opacity="0.3" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="reveal">
+                <div class="flex overflow-x-auto no-scrollbar border-b border-white/10 mb-12 font-mono text-sm uppercase tracking-tighter">
+                    <button class="skill-tab active px-6 py-4 whitespace-nowrap" data-tab="Frontend">Frontend</button>
+                    <button class="skill-tab px-6 py-4 whitespace-nowrap" data-tab="Backend">Backend</button>
+                    <button class="skill-tab px-6 py-4 whitespace-nowrap" data-tab="DevOps">DevOps</button>
+                    <button class="skill-tab px-6 py-4 whitespace-nowrap" data-tab="Databases">Databases</button>
+                    <button class="skill-tab px-6 py-4 whitespace-nowrap" data-tab="Cloud">Cloud</button>
+                    <button class="skill-tab px-6 py-4 whitespace-nowrap" data-tab="Other">Other</button>
+                </div>
+
+                <div id="skills-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 h-64 content-start">
+                    <!-- Skills will be injected here via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 px-6 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 reveal">
+                <span class="font-mono text-accent-pink tracking-widest uppercase text-xs mb-2 block">01 / SELECTED WORK</span>
+                <h2 class="font-serif text-5xl md:text-7xl">Projects</h2>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+                <!-- Project Numbers Strip -->
+                <div class="flex lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar space-x-4 lg:space-x-0 lg:space-y-4 reveal scroll-smooth pb-4 lg:pb-0">
+                    <!-- Numbers 1-12 -->
+                    <script>
+                        document.write([...Array(12).keys()].map(i => `
+                            <button class="project-number-btn flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl border border-white/10 flex items-center justify-center font-mono text-lg ${i === 0 ? 'active' : ''}" data-index="${i}">
+                                ${String(i + 1).padStart(2, '0')}
+                            </button>
+                        `).join(''));
+                    </script>
+                </div>
+
+                <!-- Project Detail Container -->
+                <div class="flex-grow min-h-[500px] reveal" id="project-preview">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote 1 -->
+    <section class="py-24 px-6 bg-accent-gradient flex items-center justify-center overflow-hidden">
+        <div class="reveal">
+            <h3 class="font-serif text-5xl md:text-8xl text-white text-center italic tracking-tighter leading-tight">
+                "Impossible is nothing."
+            </h3>
+            <p class="font-mono text-sm tracking-[0.4em] uppercase text-white/60 text-center mt-8">— Adidas</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 reveal flex items-center space-x-6">
+                <div>
+                    <span class="font-mono text-accent-purple tracking-widest uppercase text-xs mb-2 block">02 / CAREER PATH</span>
+                    <h2 class="font-serif text-5xl md:text-7xl">Experience</h2>
+                </div>
+                <!-- SVG Decorator -->
+                <div class="opacity-30">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="5" width="25" height="25" stroke="#f53d90" stroke-width="1.5" />
+                        <rect x="15" y="15" width="25" height="25" fill="#8b3cfd" fill-opacity="0.3" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="space-y-24 reveal">
+                <!-- Experience Item 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 border-b border-white/5 pb-12">
+                    <div>
+                        <p class="font-mono text-accent-pink mb-2">2022 — Present</p>
+                        <h4 class="text-2xl font-bold">Software Engineer (Freelance)</h4>
+                        <p class="text-text/50 font-mono text-sm">Self-employed</p>
+                    </div>
+                    <div>
+                        <ul class="space-y-4 text-text/70 leading-relaxed list-disc pl-5">
+                            <li>Built 12+ production-grade web and mobile apps for clients across India and international markets.</li>
+                            <li>Specialized in AI integrations, Flutter mobile apps, and high-performance Next.js platforms.</li>
+                            <li>Engineered highly dynamic GenAI pipelines and scalable architectures.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8">
+                    <div>
+                        <p class="font-mono text-accent-pink mb-2">Aug 2020 — Aug 2021</p>
+                        <h4 class="text-2xl font-bold">Google DSC Lead</h4>
+                        <p class="text-text/50 font-mono text-sm">Google Developers</p>
+                    </div>
+                    <div>
+                        <ul class="space-y-4 text-text/70 leading-relaxed list-disc pl-5">
+                            <li>Grew community by 1400% from initial membership.</li>
+                            <li>Hosted tech events and workshops with 300+ attendees.</li>
+                            <li>Led a talented team of 10+ members to foster developer culture.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-32 px-6 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 reveal flex items-center space-x-6">
+                <div>
+                    <span class="font-mono text-accent-pink tracking-widest uppercase text-xs mb-2 block">03 / HONORS</span>
+                    <h2 class="font-serif text-5xl md:text-7xl">Achievements</h2>
+                </div>
+                <!-- SVG Decorator -->
+                <div class="opacity-30">
+                    <svg width="60" height="40" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 30 L25 10 L40 30" stroke="#f53d90" stroke-width="2" />
+                        <path d="M25 30 L40 10 L55 30" fill="#8b3cfd" fill-opacity="0.3" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievement 1 -->
+                <div class="p-8 border border-white/5 bg-bg reveal hover:border-accent-pink/50 transition-colors rounded-2xl group">
+                    <span class="font-mono text-sm text-accent-pink mb-4 block">Apr–Jun 2022</span>
+                    <h4 class="text-2xl font-serif mb-4 italic group-hover:text-accent-pink transition-colors">TEDx Operations & Tech Team Head</h4>
+                    <p class="text-text/50 text-sm mb-4">TEDxGraphicEraUniversity</p>
+                    <p class="text-text/70 text-sm leading-relaxed">Led design, dev, and ops for a 500+ audience event, ensuring seamless technology integration.</p>
+                </div>
+                
+                <!-- Achievement 2 -->
+                <div class="p-8 border border-white/5 bg-bg reveal hover:border-accent-pink/50 transition-colors rounded-2xl group">
+                    <span class="font-mono text-sm text-accent-pink mb-4 block">Mar 2021</span>
+                    <h4 class="text-2xl font-serif mb-4 italic group-hover:text-accent-pink transition-colors">Microsoft Imagine Cup India Finalist</h4>
+                    <p class="text-text/50 text-sm mb-4">Microsoft India</p>
+                    <p class="text-text/70 text-sm leading-relaxed">Built a mobile app bridging teacher-student analytics, recognized as a Grand Finalist from thousands of entries.</p>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="p-8 border border-white/5 bg-bg reveal hover:border-accent-pink/50 transition-colors rounded-2xl group">
+                    <span class="font-mono text-sm text-accent-pink mb-4 block">Aug 2020</span>
+                    <h4 class="text-2xl font-serif mb-4 italic group-hover:text-accent-pink transition-colors">National Finalist — SIH</h4>
+                    <p class="text-text/50 text-sm mb-4">AICTE & MoE</p>
+                    <p class="text-text/70 text-sm leading-relaxed">Built an auction app to help farmers eliminate middlemen in Smart India Hackathon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote 2 -->
+    <section class="py-40 px-6 bg-bg border-y border-white/5 flex items-center justify-center">
+        <div class="reveal">
+            <h3 class="font-serif text-5xl md:text-8xl text-text text-center italic tracking-tighter leading-tight opacity-90">
+                "Stay hungry, stay foolish."
+            </h3>
+            <p class="font-mono text-sm tracking-[0.4em] uppercase text-text/40 text-center mt-12">— Steve Jobs</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="reveal">
+                    <span class="font-mono text-accent-pink tracking-widest uppercase text-xs mb-2 block">Available for freelance</span>
+                    <h2 class="font-serif text-5xl md:text-8xl mb-12">Get in touch</h2>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <p class="font-mono text-xs text-text/40 uppercase tracking-widest mb-2">Email</p>
+                            <a href="mailto:hello@pratham.dev" class="text-2xl md:text-3xl hover:text-accent-pink transition-colors">hello@pratham.dev</a>
+                        </div>
+                        <div>
+                            <p class="font-mono text-xs text-text/40 uppercase tracking-widest mb-2">Phone</p>
+                            <a href="tel:+917987829764" class="text-2xl md:text-3xl hover:text-accent-pink transition-colors">+91 79878 29764</a>
+                        </div>
+                        <div>
+                            <p class="font-mono text-xs text-text/40 uppercase tracking-widest mb-6">Social</p>
+                            <div class="flex space-x-6">
+                                <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent-gradient hover:border-transparent transition-all">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent-gradient hover:border-transparent transition-all">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <form class="space-y-6 bg-white/[0.03] p-8 md:p-12 rounded-3xl border border-white/5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="font-mono text-xs uppercase tracking-widest text-text/40 mb-2 block">Name</label>
+                                <input type="text" placeholder="John Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent-pink outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="font-mono text-xs uppercase tracking-widest text-text/40 mb-2 block">Email</label>
+                                <input type="email" placeholder="john@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent-pink outline-none transition-colors">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="font-mono text-xs uppercase tracking-widest text-text/40 mb-2 block">Purpose</label>
+                            <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent-pink outline-none transition-colors appearance-none">
+                                <option class="bg-bg">Freelance Project</option>
+                                <option class="bg-bg">Job Opportunity</option>
+                                <option class="bg-bg">Collaboration</option>
+                                <option class="bg-bg">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="font-mono text-xs uppercase tracking-widest text-text/40 mb-2 block">Message</label>
+                            <textarea rows="4" placeholder="How can I help you?" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent-pink outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        <button class="w-full py-4 bg-accent-gradient rounded-xl font-mono text-sm tracking-widest uppercase hover:brightness-110 transition-all">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/5 bg-bg">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 text-text/40 text-sm font-mono tracking-wider">
+            <div>
+                Crafted by <span class="text-text">Pratham</span> &copy; 2026
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <span>Built with Next.js & Vanilla JS</span>
+            </div>
+            <div class="flex items-center space-x-2 transition-all hover:text-white">
+                <svg width="18" height="18" viewBox="0 0 76 65" fill="currentColor">
+                    <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="currentColor"/>
+                </svg>
+                <span class="font-bold tracking-tighter text-white">Vercel</span>
+                <span class="ml-1">Deployed</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic Script -->
+    <script>
+        // --- DATA ---
+        const skillsData = {
+            'Frontend': ['Next.js', 'React', 'Flutter', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'HTML5', 'CSS3'],
+            'Backend': ['Node.js', 'FastAPI', 'Python', 'Express.js', 'WebSockets', 'GraphQL', 'REST APIs'],
+            'DevOps': ['Docker', 'GitHub Actions', 'Vercel', 'CI/CD', 'Linux CLI'],
+            'Databases': ['PostgreSQL', 'MongoDB', 'Redis', 'Supabase', 'Firebase', 'Prisma'],
+            'Cloud': ['AWS', 'GCP'],
+            'Other': ['OpenAI API', 'LangChain', 'Twilio', 'Mapbox', 'Shopify', 'FHIR']
+        };
+
+        const projectsData = [
+            {
+                title: "VoxIQ",
+                category: "AI Infrastructure",
+                stats: "99.9% Uptime",
+                tags: ["OpenAI", "Twilio", "WebSockets", "Node.js"],
+                description: "Real-time conversational AI interface for handling calls, managing conversations, and automating workflows. Engineered for scale and low latency.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/voxiq",
+                github: "#"
+            },
+            {
+                title: "Signal AI",
+                category: "AI Automation",
+                stats: "98% Accuracy",
+                tags: ["Python", "FastAPI", "OpenAI Vision", "React"],
+                description: "AI-powered system that extracts, processes, and structures data from complex documents with high accuracy using state-of-the-art vision models.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/signal-ai",
+                github: "#"
+            },
+            {
+                title: "Orbit OS",
+                category: "Systems Integration",
+                stats: "10k+ Assets",
+                tags: ["React", "Mapbox", "GraphQL", "PostgreSQL"],
+                description: "Operations dashboard for managing fleets, tracking routes, and optimizing logistics workflows in real time. Features complex map-based visualizations.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/orbit-os",
+                github: "#"
+            },
+            {
+                title: "Aura",
+                category: "App Development",
+                stats: "50k+ DLs",
+                tags: ["Flutter", "Dart", "Supabase", "UI/UX"],
+                description: "Visually immersive mobile-first platform to discover live music events, explore artists, and book tickets. High-fidelity motion design and fluid UX.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/aura-events",
+                github: "#"
+            },
+            {
+                title: "Cura Medical",
+                category: "B2B E-Commerce",
+                stats: "Enterprise Grade",
+                tags: ["Next.js", "Prisma", "Enterprise", "Tailwind"],
+                description: "Clinical-grade procurement platform for hospitals to manage inventory, suppliers, and bulk ordering. Compliant with healthcare standards.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/cura-medical",
+                github: "#"
+            },
+            {
+                title: "Prism",
+                category: "Web Development",
+                stats: "95+ Lighthouse",
+                tags: ["Next.js", "React", "Tailwind CSS", "CMS"],
+                description: "Modern conversion-optimized SaaS website designed for clarity, speed, and scalability. Integrated with headless CMS for rapid content updates.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/prism",
+                github: "#"
+            },
+            {
+                title: "Synth Chat",
+                category: "AI Integration",
+                stats: "Context Aware",
+                tags: ["OpenAI", "LangChain", "WebSockets"],
+                description: "Generative AI support chatbot embedded directly into client workflows. Uses RAG (Retrieval-Augmented Generation) for accurate business responses.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/synth-chat",
+                github: "#"
+            },
+            {
+                title: "Terra",
+                category: "Web Platform",
+                stats: "High Fidelity",
+                tags: ["Next.js", "Mapbox", "PostgreSQL"],
+                description: "Luxury property discovery platform with high-fidelity imagery and map integrations. Seamless search and discovery for premium real estate.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/terra-estates",
+                github: "#"
+            },
+            {
+                title: "Kinetic",
+                category: "Systems",
+                stats: "Real-time Sync",
+                tags: ["React Native", "Node.js", "Redis", "TS"],
+                description: "Modern inventory platform to track stock levels, monitor alerts, and manage operations. Built for high-speed logistics and warehousing.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/kinetic",
+                github: "#"
+            },
+            {
+                title: "Nexus SaaS",
+                category: "Architecture",
+                stats: "Microservices",
+                tags: ["Vue", "TypeScript", "D3.js"],
+                description: "Scalable B2B dashboard for monitoring microservices and user metrics. Data-intensive visualizations for complex system monitoring.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/nexus-saas",
+                github: "#"
+            },
+            {
+                title: "MedSync",
+                category: "Web Development",
+                stats: "FHIR Ready",
+                tags: ["React", "Node.js", "FHIR", "Tailwind"],
+                description: "Highly secure clinical scheduling and patient management dashboard. Designed with extreme attention to patient privacy and workflow efficiency.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/med-sync",
+                github: "#"
+            },
+            {
+                title: "Aero",
+                category: "App Development",
+                stats: "Physics Engine",
+                tags: ["Flutter", "Dart", "Firebase"],
+                description: "Fluid, physics-driven mobile application built in Flutter. Pushing the boundaries of mobile performance and interaction design.",
+                live: "https://portfolio-me-delta-ten.vercel.app/work/aero-app",
+                github: "#"
+            }
+        ];
+
+        // --- SKILLS LOGIC ---
+        function renderSkills(category) {
+            const container = document.getElementById('skills-container');
+            container.innerHTML = '';
+            skillsData[category].forEach((skill, i) => {
+                const div = document.createElement('div');
+                div.className = 'px-6 py-4 rounded-xl border border-white/5 bg-white/[0.02] font-mono text-sm reveal active hover:border-accent-pink transition-colors cursor-default';
+                div.style.transitionDelay = `${i * 50}ms`;
+                div.textContent = skill;
+                container.appendChild(div);
+            });
+        }
+
+        document.querySelectorAll('.skill-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.skill-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                renderSkills(tab.dataset.tab);
+            });
+        });
+
+        // Initialize first tab
+        renderSkills('Frontend');
+
+        // --- PROJECT SWITCHER LOGIC ---
+        function renderProject(index) {
+            const container = document.getElementById('project-preview');
+            const data = projectsData[index];
+            
+            // Fade out
+            container.classList.remove('active');
+            
+            setTimeout(() => {
+                const colors = [
+                    'from-[#f53d90]/20 to-[#8b3cfd]/20',
+                    'from-[#6366f1]/20 to-[#a855f7]/20',
+                    'from-[#ec4899]/20 to-[#8b5cf6]/20',
+                    'from-[#06b6d4]/20 to-[#3b82f6]/20'
+                ];
+                const bgClass = colors[index % colors.length];
+
+                container.innerHTML = `
+                    <div class="grid grid-cols-1 xl:grid-cols-[1.2fr_1fr] gap-12">
+                        <!-- Mockup Card -->
+                        <div class="relative group rounded-3xl overflow-hidden aspect-video bg-neutral-900 border border-white/5 grid-pattern flex flex-col items-center justify-center p-8">
+                            <div class="absolute inset-0 bg-gradient-to-br ${bgClass} opacity-50"></div>
+                            <div class="relative z-10 text-center">
+                                <span class="px-4 py-1.5 rounded-full border border-white/10 bg-black/40 text-[10px] font-mono uppercase tracking-widest text-accent-pink mb-4 inline-block">${data.category}</span>
+                                <h3 class="font-serif text-4xl md:text-5xl italic tracking-tighter mb-6">${data.title}</h3>
+                                <div class="flex flex-wrap justify-center gap-2 max-w-sm">
+                                    ${data.tags.map(t => `<span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] font-mono">${t}</span>`).join('')}
+                                </div>
+                            </div>
+                            <!-- Dot Pattern Overlay -->
+                            <div class="absolute bottom-6 right-6 font-mono text-[8px] opacity-20 uppercase tracking-widest leading-loose text-right">
+                                Build No: 2026.04.14<br>
+                                Environment: Production<br>
+                                Status: Operational
+                            </div>
+                        </div>
+
+                        <!-- Details -->
+                        <div class="flex flex-col justify-center">
+                            <div class="flex items-center space-x-4 mb-6">
+                                <span class="font-mono text-accent-pink text-xs uppercase tracking-widest">${data.category}</span>
+                                <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+                                <span class="font-mono text-text/40 text-xs uppercase tracking-widest">${data.stats}</span>
+                            </div>
+                            <h3 class="text-4xl md:text-6xl font-serif mb-8 leading-tight">${data.title}</h3>
+                            <p class="text-text/60 text-lg leading-relaxed mb-10">
+                                ${data.description}
+                            </p>
+                            <div class="flex flex-wrap gap-4 mt-auto">
+                                <a href="${data.live}" target="_blank" class="px-8 py-3 bg-white text-black rounded-full font-mono text-xs uppercase tracking-widest hover:bg-accent-pink hover:text-white transition-all flex items-center">
+                                    Live Site
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                                <a href="${data.github}" class="px-8 py-3 border border-white/20 rounded-full font-mono text-xs uppercase tracking-widest hover:bg-white/5 transition-all flex items-center">
+                                    GitHub
+                                    <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Fade in
+                container.classList.add('active');
+            }, 300);
+        }
+
+        document.querySelectorAll('.project-number-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.project-number-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderProject(parseInt(btn.dataset.index));
+                
+                // On mobile, scroll the btn into view
+                if(window.innerWidth < 1024) {
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            });
+        });
+
+        // Initialize first project
+        renderProject(0);
+
+        // --- REVEAL ANIMATION ---
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // --- MOBILE MENU ---
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.remove('translate-x-full');
+        });
+
+        const closeMenu = () => menu.classList.add('translate-x-full');
+        closeBtn.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+</html>
