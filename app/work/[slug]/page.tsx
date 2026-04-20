@@ -40,7 +40,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <div className="font-mono text-[10px] md:text-xs text-[var(--color-brand-accent)] uppercase tracking-[0.3em] font-bold mb-6">
             [{project.categoryBadge}]
           </div>
-          <h1 className="font-anton text-[12vw] md:text-[8vw] leading-[0.85] uppercase mb-10 tracking-tighter">
+          <h1 className="font-anton text-6xl sm:text-7xl md:text-8xl lg:text-[10vw] leading-[0.9] uppercase mb-10 tracking-tighter break-words">
             {project.projectName}
           </h1>
           <p className="font-body text-lg md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto opacity-80 mb-12">
@@ -55,7 +55,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 rel="noopener noreferrer" 
                 className="btn-primary px-12 py-6 text-xl md:text-2xl font-anton tracking-widest inline-flex items-center gap-4 shadow-[10px_10px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
               >
-                Visit Live Site <span className="text-2xl">↗</span>
+                {project.categoryBadge === "App" ? "View on Play Store" : "Visit Live Site"} <span className="text-2xl">↗</span>
               </Link>
             </div>
           )}
@@ -167,7 +167,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 rel="noopener noreferrer" 
                 className="btn-brutalist border-[#00e5c3] bg-[#00e5c3] text-[#0a0a0f] hover:bg-white hover:text-[var(--color-brand-text)]"
               >
-                Visit Live Site
+                {project.categoryBadge === "App" ? "View on Play Store" : "Visit Live Site"}
               </Link>
             )}
 

@@ -49,10 +49,10 @@ export default function WorkSection() {
          {/* Premium Agency Grid */}
          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-16 lg:gap-x-12 lg:gap-y-24">
             {filteredProjects.map((project, idx) => (
-              <Link href={`/work/${project.slug}`} key={project.slug} className="group flex flex-col w-full h-full cursor-pointer">
+              <div key={project.slug} className="group flex flex-col w-full h-full">
                  
-                 {/* The Image Box (Completely filled) */}
-                 <div className="w-full aspect-[4/3] md:aspect-[4/3] lg:aspect-[16/10] overflow-hidden bg-[#E8E6E1] relative border-[2px] border-[var(--color-brand-text)] mb-6 md:mb-8 transition-shadow duration-500 group-hover:shadow-[10px_10px_0px_0px_var(--color-brand-text)]">
+                 {/* The Image Box (Completely filled) - Links to Case Study */}
+                 <Link href={`/work/${project.slug}`} className="w-full aspect-[4/3] md:aspect-[4/3] lg:aspect-[16/10] overflow-hidden bg-[#E8E6E1] relative border-[2px] border-[var(--color-brand-text)] mb-6 md:mb-8 transition-shadow duration-500 group-hover:shadow-[10px_10px_0px_0px_var(--color-brand-text)] block">
                     {project.imageUrl && (
                       <Image 
                         src={project.imageUrl}
@@ -62,14 +62,16 @@ export default function WorkSection() {
                         quality={90}
                       />
                     )}
-                 </div>
+                 </Link>
 
                  {/* The Content */}
                  <div className="flex flex-col flex-1 pl-2 md:pl-4 border-l-[2px] border-[var(--color-brand-text)]">
-                    <div className="flex flex-col xl:flex-row xl:items-center justify-between mb-4 gap-2">
-                       <h3 className="font-anton text-4xl md:text-5xl uppercase tracking-wide text-[var(--color-brand-text)]">
-                         {project.projectName}
-                       </h3>
+                    <div className="flex flex-col xl:flex-row xl:items-center justify-between mb-4 gap-4 md:gap-2">
+                       <Link href={`/work/${project.slug}`}>
+                        <h3 className="font-anton text-4xl md:text-5xl uppercase tracking-wide text-[var(--color-brand-text)] hover:text-[var(--color-brand-accent)] transition-colors cursor-pointer">
+                          {project.projectName}
+                        </h3>
+                       </Link>
                        <span className="font-body text-[10px] md:text-xs uppercase tracking-widest font-bold px-3 py-1 bg-[var(--color-brand-text)] text-[var(--color-brand-bg)] inline-block w-max">
                          {project.categoryBadge}
                        </span>
@@ -83,16 +85,29 @@ export default function WorkSection() {
                       ↳ {project.keyOutcome}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                       {project.stackPills.slice(0, 4).map((pill, i) => (
-                         <span key={i} className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[var(--color-brand-text)] opacity-70 border border-[var(--color-brand-text)] border-opacity-30 px-3 py-1 bg-white">
-                           {pill}
-                         </span>
-                       ))}
+                    <div className="flex flex-wrap items-center justify-between gap-4 mt-auto">
+                       <div className="flex flex-wrap gap-2">
+                        {project.stackPills.slice(0, 3).map((pill, i) => (
+                          <span key={i} className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[var(--color-brand-text)] opacity-70 border border-[var(--color-brand-text)] border-opacity-30 px-3 py-1 bg-white">
+                            {pill}
+                          </span>
+                        ))}
+                       </div>
+
+                       {project.live && (
+                        <Link 
+                          href={project.live} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="bg-[var(--color-brand-text)] text-[var(--color-brand-bg)] px-4 py-2 font-anton text-[10px] md:text-xs uppercase tracking-widest hover:bg-[var(--color-brand-accent)] hover:text-[var(--color-brand-text)] transition-all flex items-center gap-2"
+                        >
+                          {project.categoryBadge === "App" ? "Play Store" : "Visit"} <span>↗</span>
+                        </Link>
+                       )}
                     </div>
                  </div>
 
-              </Link>
+              </div>
             ))}
          </div>
 

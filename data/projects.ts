@@ -36,6 +36,142 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    slug: "khedutsathi",
+    projectName: "Khedut Sathi",
+    categoryBadge: "Web",
+    typeBadge: "AgTech Marketplace",
+    metric: "15k+",
+    metricLabel: "Products Sold",
+    shortDescription: "A comprehensive agricultural e-commerce and advisory platform empowering Indian farmers with quality supplies and expert insights.",
+    fullDescription: "Khedut Sathi is a mission-driven platform that connects farmers with authentic agricultural products, real-time market rates (mandi bhav), and expert crop-care advisory. Built to bridge the digital gap in rural India, it provides a seamless shopping experience for seeds, fertilizers, and equipment while offering localized data to help farmers maximize their yields.",
+    stackPills: ["Next.js", "TypeScript", "Tailwind", "Node.js", "PostgreSQL"],
+    imageUrl: "/projects/project-khedutsathi.png",
+    longImage: null,
+    detailedImages: ["/projects/project-khedutsathi-detail.png"],
+    keyOutcome: "Enabled 5,000+ farmers to access quality agri-supplies with door-step delivery.",
+    metrics: [
+      { value: "15k+", label: "Products" },
+      { value: "5k+", label: "Farmers Served" },
+      { value: "4.8/5", label: "User Rating" }
+    ],
+    problemContext: "Indian farmers often face challenges in accessing authentic agricultural products at fair prices and lack a centralized platform for reliable expert advice and real-time market data.",
+    problemSolution: "Developed an integrated e-commerce and advisory ecosystem. Key features include a robust marketplace for seeds and fertilizers, real-time Mandi Rate tracking, AI-powered pest detection suggestions, and a community forum for expert support. Optimized for low-bandwidth environments to ensure accessibility in remote areas.",
+    storyClient: "We needed a platform that farmers could trust. It had to be simple, fast, and informative.",
+    storyPratham: "I built a high-performance marketplace that simplifies complex agricultural data into actionable insights for farmers, combining commerce with community.",
+    uxPhilosophy: "Simplicity is accessibility. In rural tech, every pixel must serve a clear purpose.",
+    projectCTA: "Looking to build a marketplace that makes a real-world impact? Let's connect.",
+    live: "https://www.khedutsathi.com",
+    features: [
+      { title: "Agri Marketplace", desc: "Authentic seeds and fertilizers" },
+      { title: "Real-time Mandi Bhav", desc: "Live market rates across India" },
+      { title: "Expert Advisory", desc: "Crop-care tutorials and guides" },
+      { title: "Voice Search", desc: "Optimized for ease of use" },
+      { title: "Multilingual Support", desc: "Regional language integration" },
+      { title: "Offline Support", desc: "Caching for low-connectivity zones" },
+      { title: "Order Tracking", desc: "End-to-end supply chain visibility" },
+      { title: "Soil Health Reports", desc: "Digital data for precision farming" }
+    ]
+  },
+  {
+    slug: "casa",
+    projectName: "CASA",
+    categoryBadge: "App",
+    typeBadge: "E-commerce App",
+    metric: "50k+",
+    metricLabel: "Downloads",
+    shortDescription: "A revolutionary 'swipe-to-shop' e-commerce app that brings dating-app mechanics to fashion discovery.",
+    fullDescription: "CASA reimagines the e-commerce discovery process using a fluid swipe-based interface. Built with Flutter and GraphQL, it allows users to quickly browse through curated fashion collections, saving items they love and discarding those they don't with simple gestures. Integrated with Razorpay for seamless payments and Firebase for real-time engagement.",
+    stackPills: ["Flutter", "GraphQL", "Firebase", "Node.js"],
+    imageUrl: "/projects/project-casa.png",
+    longImage: null,
+    detailedImages: [],
+    keyOutcome: "Reached 50,000+ active users within 6 months of Play Store launch.",
+    metrics: [
+      { value: "50k+", label: "Downloads" },
+      { value: "4.5/5", label: "Store Rating" },
+      { value: "High", label: "Retention" }
+    ],
+    problemContext: "Traditional e-commerce lists are exhausting. Users often spend more time scrolling than discovering products they actually like.",
+    problemSolution: "Built a high-performance Flutter app that treats product discovery as a game. Using an optimistic UI and pre-fetched GraphQL data, the swiping experience is buttery smooth, making shopping feel like discovery rather than a chore.",
+    storyClient: "We wanted to make shopping fun. It should feel like a game, but with real products.",
+    storyPratham: "I built a gesture-driven discovery engine that reduced search time by 40% and significantly increased user engagement sessions.",
+    uxPhilosophy: "The best interfaces are invisible. They don't just show data; they feel like an extension of your hand.",
+    projectCTA: "Building a next-gen consumer app? Let's innovate on UX.",
+    live: "https://play.google.com/store/apps/details?id=com.casashop.casaflutterapp",
+    features: [
+      { title: "Swipe Discovery", desc: "Tinder-style product cards" },
+      { title: "GraphQL API", desc: "Ultra-fast product fetching" },
+      { title: "Razorpay Native", desc: "Seamless in-app checkout" },
+      { title: "Firebase Auth", desc: "One-tap social login" }
+    ]
+  },
+  {
+    slug: "workeazy",
+    projectName: "Workeazy",
+    categoryBadge: "App",
+    typeBadge: "SaaS Mobile",
+    metric: "100+",
+    metricLabel: "Companies",
+    shortDescription: "A comprehensive SaaS-based project management app designed for high-velocity teams and complex nested workflows.",
+    fullDescription: "Workeazy is a production-grade project management tool designed for teams on the move. It features multi-role authentication, real-time task tracking, nested project architectures, and integrated communication layers. Built to handle heavy data loads with a robust Node.js backend on AWS EC2.",
+    stackPills: ["Flutter", "Firebase", "Node.js", "AWS"],
+    imageUrl: "/projects/project-workeazy.png",
+    longImage: null,
+    detailedImages: [],
+    keyOutcome: "Optimized project delivery timelines for 100+ small-to-medium enterprises.",
+    metrics: [
+      { value: "100+", label: "SaaS Teams" },
+      { value: "0ms", label: "Sync Latency" },
+      { value: "AWS", label: "Cloud Infra" }
+    ],
+    problemContext: "Managers and team members struggle to keep track of tasks when they aren't at their desks. Desktop tools are too heavy for mobile-first coordination.",
+    problemSolution: "Engineered a lightweight yet powerful mobile client using Flutter. Implemented a sophisticated caching layer that allows full offline usage with background synchronization to ensure no data loss during field operations.",
+    storyClient: "Our team is always in the field. We need a tool that works as hard as we do.",
+    storyPratham: "I delivered a high-availability mobile platform that ensures critical project data is always at the team's fingertips, regardless of connectivity.",
+    uxPhilosophy: "Utility first. A tool that helps you get the job done faster is a beautiful tool.",
+    projectCTA: "Ready to take your SaaS to mobile? Let's architect the transition.",
+    live: "https://play.google.com/store/apps/details?id=com.workeazy.workeazy",
+    features: [
+      { title: "Multi-role Auth", desc: "Admin, Manager, Member roles" },
+      { title: "Nested Projects", desc: "Complex task hierarchies" },
+      { title: "Offline Sync", desc: "Reliable background data sync" },
+      { title: "Real-time Notifications", desc: "Firebase Cloud Messaging" }
+    ]
+  },
+  {
+    slug: "shaad",
+    projectName: "Shaad",
+    categoryBadge: "App",
+    typeBadge: "FinTech App",
+    metric: "1M+",
+    metricLabel: "Transactions",
+    shortDescription: "Multi-country mobile recharge and utility platform serving high-volume users across Afghanistan, Turkey, and Nepal.",
+    fullDescription: "Shaad provides a critical financial bridge for users in emerging markets. It enables instant mobile recharge and utility payments through a secure, biometrically-authenticated interface. Developed with separate, optimized flows for both individual customers and specialized retail dealers.",
+    stackPills: ["Flutter", "Firebase", "Stripe", "Stripe Connect"],
+    imageUrl: "/projects/project-shaad.png",
+    longImage: null,
+    detailedImages: [],
+    keyOutcome: "Successfully processed over 1 million secure international transactions in the first year.",
+    metrics: [
+      { value: "1M+", label: "Transactions" },
+      { value: "3 Countries", label: "Active Ops" },
+      { value: "Secure", label: "Biometric Auth" }
+    ],
+    problemContext: "Mobile recharge systems in these regions are often slow, fragmented, and lack user-friendly interfaces for both vendors and customers.",
+    problemSolution: "Architected a secure, high-concurrency payment gateway integration using Flutter. Focused on 'recharge-in-seconds' performance and iron-clad security protocols including biometric login and real-time transaction auditing.",
+    storyClient: "Reliability is everything in payments. People depend on us to stay connected.",
+    storyPratham: "We built a zero-failure recharge platform that handles millions of transactions with perfect data integrity and sub-second response times.",
+    uxPhilosophy: "Trust is built through reliability. In fintech, every loading state must project confidence.",
+    projectCTA: "Building secure financial systems? Let's ensure they scale.",
+    live: "https://play.google.com/store/apps/details?id=com.shaad.customer",
+    features: [
+      { title: "Multi-Country Support", desc: "Dynamic regional configs" },
+      { title: "Biometric Security", desc: "Fingerprint & Face ID" },
+      { title: "Dealer Portal", desc: "Specialized inventory tools" },
+      { title: "Transactional Auditing", desc: "Real-time ledger systems" }
+    ]
+  },
+  {
     slug: "hipeople",
     projectName: "HiPeople",
     categoryBadge: "Systems",
