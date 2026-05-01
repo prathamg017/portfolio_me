@@ -13,17 +13,13 @@ export default function Footer() {
         </div>
         <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-end gap-6 pb-12">
           <div className="flex items-center gap-4 border-b border-[var(--color-inverse-border)] pb-2 text-sm font-body tracking-widest uppercase">
-            <span className="opacity-50">Email</span>
-            <a href="mailto:gangwalpratham1302@gmail.com" className="hover:underline lowercase">gangwalpratham1302@gmail.com</a>
-          </div>
-          <div className="flex items-center gap-4 border-b border-[var(--color-inverse-border)] pb-2 text-sm font-body tracking-widest uppercase">
             <span className="opacity-50">WhatsApp</span>
             <a href="https://wa.me/918109224176" className="hover:underline">+91 81092 24176</a>
           </div>
         </div>
       </div>
       <div className="flex justify-between items-center p-6 text-[10px] font-bold tracking-widest uppercase font-mono">
-        <div>© {new Date().getFullYear()} Pratham.</div>
+        <div>© {new Date().getFullYear()} Pratz.</div>
         <div className="flex gap-4">
           <a href="#" className="hover:underline">LinkedIn</a>
           <a href="#" className="hover:underline">GitHub</a>

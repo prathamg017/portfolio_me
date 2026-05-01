@@ -45,11 +45,11 @@ export default function FreeAudit() {
                <div className="space-y-6">
                  <div className="flex flex-col gap-2">
                     <label className="font-mono text-[9px] uppercase font-bold opacity-40">Ident_Full_Name</label>
-                    <input required placeholder="Pratham G." type="text" className="w-full bg-white border-b-[2px] border-[var(--color-brand-text)] text-[var(--color-brand-text)] py-3 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors placeholder:opacity-30" />
+                    <input required placeholder="Pratz G." type="text" className="w-full bg-white border-b-[2px] border-[var(--color-brand-text)] text-[var(--color-brand-text)] py-3 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors placeholder:opacity-30" />
                  </div>
                  <div className="flex flex-col gap-2">
                     <label className="font-mono text-[9px] uppercase font-bold opacity-40">Ident_Work_Email</label>
-                    <input required placeholder="gangwalpratham1302@gmail.com" type="email" className="w-full bg-white border-b-[2px] border-[var(--color-brand-text)] text-[var(--color-brand-text)] py-3 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors placeholder:opacity-30" />
+                    <input required placeholder="you@company.com" type="email" className="w-full bg-white border-b-[2px] border-[var(--color-brand-text)] text-[var(--color-brand-text)] py-3 font-body text-sm focus:outline-none focus:border-[var(--color-brand-accent)] transition-colors placeholder:opacity-30" />
                  </div>
                  <div className="flex flex-col gap-2">
                     <label className="font-mono text-[9px] uppercase font-bold opacity-40">Obj_Primary_Metric</label>

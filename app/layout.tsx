@@ -28,18 +28,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "pratham.dev — AI · Web · App Studio",
+  title: "pratz.tech — AI · Web · App Studio",
   description: "We build AI automation systems, Next.js platforms, and Flutter apps that compound business value. Based in India, building globally.",
   openGraph: {
-    title: "pratham.dev — AI · Web · App Studio",
+    title: "pratz.tech — AI · Web · App Studio",
     description: "We build AI automation systems, Next.js platforms, and Flutter apps that compound business value. Based in India, building globally.",
-    url: "https://pratham.com",
-    siteName: "pratham.dev",
+    url: "https://pratz.tech",
+    siteName: "pratz.tech",
     images: [{ url: "/og-image.jpg" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "pratham.dev — AI · Web · App Studio",
+    title: "pratz.tech — AI · Web · App Studio",
     description: "We build AI automation systems, Next.js platforms, and Flutter apps that compound business value. Based in India, building globally."
   }
 };

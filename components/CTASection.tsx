@@ -85,8 +85,6 @@ export default function CTASection() {
 
         {/* Global corporate standard contact styling */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mt-24 pt-12 border-t border-white/10 w-full max-w-4xl font-mono text-[10px] md:text-xs font-bold text-white/40 uppercase tracking-[0.2em]">
-          <Link href="mailto:gangwalpratham1302@gmail.com" className="hover:text-[var(--color-brand-accent)] transition-colors">Mail: gangwalpratham1302@gmail.com</Link>
-          <span className="hidden md:inline">•</span>
           <Link href="https://wa.me/918109224176" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-brand-accent)] transition-colors">Whatsapp: +91 81092 24176</Link>
           <span className="hidden md:inline">•</span>
           <span>India HQ / Global OPS</span>

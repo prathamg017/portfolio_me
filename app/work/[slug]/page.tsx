@@ -115,9 +115,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
              {/* Studio Bubble */}
              <div className="self-end max-w-[80%] text-right">
-                <div className="font-mono text-[10px] uppercase tracking-widest font-bold mb-2 text-[var(--color-brand-accent)]">Pratham Studio</div>
+                <div className="font-mono text-[10px] uppercase tracking-widest font-bold mb-2 text-[var(--color-brand-accent)]">Pratz Studio</div>
                 <div className="bg-[var(--color-brand-text)] text-white p-6 md:p-8 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl shadow-[8px_8px_0px_0px_var(--color-brand-accent)]">
-                   <p className="font-body text-base md:text-lg font-medium">{project.storyPratham}</p>
+                   <p className="font-body text-base md:text-lg font-medium">{project.storyPratz}</p>
                 </div>
              </div>
           </div>
